@@ -14,8 +14,6 @@ const jetbrainsMono = JetBrains_Mono({
 
 import SmoothScroll from "@/components/SmoothScroll";
 
-import Navigation from "@/components/Navigation";
-
 export const metadata: Metadata = {
   title: "Ashraf El Houfi - Portfolio",
   description: "Computer Engineering Student & Creative Developer based in Marrakech. Specializing in modern web technologies and immersive digital experiences.",
@@ -58,7 +56,6 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
       >
         <SmoothScroll>
-          <Navigation />
           {children}
         </SmoothScroll>
       </body>
