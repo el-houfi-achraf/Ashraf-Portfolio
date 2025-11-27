@@ -7,7 +7,21 @@ const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(true); // Default to true to prevent hydration mismatch
+
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -29,6 +43,8 @@ const CustomCursor = () => {
       window.removeEventListener("mouseover", handleMouseOver);
     };
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <motion.div
