@@ -13,7 +13,6 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 
 import Navigation from "@/components/Navigation";
 
@@ -59,7 +58,6 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
       >
         <SmoothScroll>
-          <CustomCursor />
           <Navigation />
           {children}
         </SmoothScroll>

@@ -10,7 +10,7 @@ const Loader = () => {
 
   // Simulated slow loading
   useEffect(() => {
-    const duration = 3500; // 3.5 seconds total load time
+    const duration = 1500; // 1.5 seconds total load time
     const interval = 50;
     const steps = duration / interval;
     const increment = 100 / steps;
